@@ -1,3 +1,5 @@
+
+//Take a new file and create a class and name it as Demo and write the following code
 package project;
 import java.util.*;
 public class Demo {
@@ -10,6 +12,10 @@ public class Demo {
 	}
 	
 }
+
+//Now  create another class and name it as Game and write the following code
+package project;
+import java.util.*;
 public class Game {
 	public static void main(String[] args) {
 	    Scanner sc=new Scanner(System.in);
