@@ -1,0 +1,58 @@
+package project;
+import java.util.*;
+public class Demo {
+	static void start(int i){
+		
+	    System.out.println("*".repeat(20));
+	    System.out.println("round:"+i);
+	    System.out.println("*".repeat(20));
+	    
+	}
+	
+}
+public class Game {
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    Random r=new Random();
+	    int so=0,co=0,sy=0;
+	    System.out.println("Enter the number of rounds you want to play:");
+	    int num=sc.nextInt();
+	    for(int i=1;i<=num;i++){
+	    Demo.start(i);
+	     do{
+	        so=r.nextInt(100);
+	     }while(so==0);
+	     System.out.print("Enter your number(1 to 100):");
+	     int uo=sc.nextInt();
+	     System.out.println("The system generated random number is:"+so);
+	     System.out.println("Your guessed number is:"+uo);
+	     if(so==uo){
+	        System.out.println("congratulations! you guess correctly...");
+	        co++;
+	     }
+	     else if(so<uo){
+	        System.out.println("sorry! you guess is too high....");
+	        sy++;
+	     }
+	     else{
+	        System.out.println("sorry! you guess is too low....");
+	        sy++;
+	     }
+
+	    }
+	    System.out.println("--".repeat(20));
+	    System.out.println("The final result.....");
+	    System.out.println("your score:"+co+"\nsystem score:"+sy);
+	    if(co>sy){
+	       System.out.print("Hurry......you won the game");
+	    }
+	    else if(co==sy){
+	        System.out.print("ohh....it's a draw");
+	    }
+	    else{
+	        System.out.print("sorry......you lost the game");
+	    }
+
+	}
+
+}
