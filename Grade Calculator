@@ -1,0 +1,74 @@
+
+//Take the file and create a class and write the code as follows:
+package grade;
+public class Student {
+    protected String sub;
+    protected  int tel,hin,eng,maths,sci,soc,sum=0;
+    final int co=6;
+	public Student(String sub,int tel, int hin, int eng, int maths, int sci, int soc){
+		this.sub=sub;
+		this.tel=tel;
+		this.hin=hin;
+		this.eng=eng;
+		this.maths=maths;
+		this.sci=sci;
+		this.soc=soc;
+		sum=sum+tel+hin+eng+maths+sci+soc;
+		
+	}
+	public void sum() {
+		System.out.println("The Total marks are:"+sum);
+	}
+	
+	public float avg() {
+		return (float)sum/co;
+}
+}
+
+//Now create another class and write the code as follows:
+package grade;
+import java.util.*;
+public class GradeCalculator {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Student name :");
+		String name=sc.nextLine();
+		System.out.print("Telugu:");
+		int tel=sc.nextInt();
+		System.out.print("Hindi:");
+		int hin=sc.nextInt();
+		System.out.print("English:");
+		int eng=sc.nextInt();
+		System.out.print("Maths:");
+		int maths=sc.nextInt();
+		System.out.print("Science:");
+		int sci=sc.nextInt();
+		System.out.print("Social:");
+		int soc=sc.nextInt();
+        Student s=new Student(name,tel,hin,eng,maths,sci,soc);
+        System.out.println("\n");
+        System.out.println("Result.............");
+        s.sum();
+        System.out.println("The Average is:"+s.avg()+"%");
+        if(tel<35||hin<35||eng<35||maths<35||sci<35||soc<35){
+        	System.out.println("fail");
+        }
+        else if(s.avg()>=75&&s.avg()<=100) {
+        	System.out.println("passed at distinction");
+        }
+        else if(s.avg()>=60&&s.avg()<75) {
+        	System.out.println("passed at 1st division");
+        }
+        else if(s.avg()>=50&&s.avg()<60) {
+        	System.out.println("passed at 2nd division");
+        }
+        else if(s.avg()>=35&&s.avg()<40) {
+        	System.out.println("passed at 3rd division");
+        }
+        else {
+        	System.out.println("fail");
+        }
+        
+		}
+
+}
