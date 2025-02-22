@@ -1,5 +1,5 @@
 
-//Take the file and create a class and write the code as follows:
+//Take a new file and create a class and write the code as follows:
 package grade;
 public class Student {
     protected String sub;
