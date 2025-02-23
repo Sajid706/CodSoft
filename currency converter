@@ -1,0 +1,233 @@
+//Take a new file and create a class and write the following code:
+
+package rupees;
+import java.util.*;
+public class Currency {
+protected float doller,rupees,euro,pound,yen;
+public void dollerTorupees(float doller) {
+	this.doller=doller;
+	float sum=86.65f;
+	this.rupees=(float)sum*doller;
+	System.out.println("$"+doller+"="+rupees+"/-");
+}
+public void rupeesTodoller(float rupees) {
+	this.rupees=rupees;
+	float sum=86.65f;
+	this.doller=(float)rupees/sum;
+	System.out.println(rupees+"/-"+" ="+"$"+doller);
+}
+public void dollerToeuro(float doller) {
+	this.doller=doller;
+	float sum=0.96f;
+	this.euro=(float)doller*sum;
+	System.out.println("$"+doller+"="+"€"+euro);
+}
+public void euroTodoller(float euro) {
+	this.euro=euro;
+	float sum=0.96f;
+	this.doller=(float)euro/sum;
+	System.out.println("€"+euro+"="+"$"+doller);
+}
+public void dollerTopound(float doller) {
+	this.doller=doller;
+	float sum=0.79f;
+	this.pound=(float)doller*sum;
+	System.out.println("$"+doller+"="+"£"+pound);
+}
+public void poundTodoller(float pound) {
+	this.pound=pound;
+	float sum=0.79f;
+	this.doller=(float)pound/sum;
+	System.out.println("£"+pound+"="+"$"+doller);
+}
+public void dollerToyen(float doller) {
+	this.doller=doller;
+	float sum=149.22f;
+	this.yen=(float)sum*doller;
+	System.out.println("$"+doller+"="+"¥"+yen);
+}
+public void yenTodoller(float yen) {
+	this.yen=yen;
+	float sum=149.22f;
+	this.doller=(float)yen/sum;
+	System.out.println("¥"+yen+"="+"$"+doller);
+}
+public void rupeesToeuro(float rupees) {
+	this.rupees=rupees;
+	float sum=0.011f;
+	this.euro=(float)sum*rupees;
+	System.out.println(rupees+"/-"+" ="+"€"+euro);
+}
+public void euroTorupees(float euro) {
+	this.euro=euro;
+	float sum=0.011f;
+	this.rupees=(float)euro/sum;
+	System.out.println("€"+euro+"="+rupees+"/-");
+}
+public void rupeesTopound(float rupees) {
+	this.rupees=rupees;
+	float sum=0.0091f;
+	this.pound=(float)sum*rupees;
+	System.out.println(rupees+"/-"+" ="+"£"+pound);
+}
+public void poundTorupees(float pound) {
+	this.pound=pound;
+	float sum=0.0091f;
+	this.rupees=(float)pound/sum;
+	System.out.println("£"+pound+"="+rupees+"/-");
+}
+public void rupeesToyen(float rupees) {
+	this.rupees=rupees;
+	float sum=1.72f;
+	this.yen=(float)rupees*sum;
+	System.out.println(rupees+"/-"+" ="+"¥"+yen);
+}
+public void yenTorupees(float yen) {
+	this.yen=yen;
+	float sum=1.72f;
+	this.rupees=(float)yen/sum;
+	System.out.println("¥"+yen+"="+rupees+"/-");
+}
+public void euroTopound(float euro) {
+	this.euro=euro;
+	float sum=0.83f;
+	this.pound=(float)euro*sum;
+	System.out.println("€"+euro+"="+"£"+pound);
+}
+public void poundToeuro(float pound) {
+	this.pound=pound;
+	float sum=0.83f;
+	this.euro=(float)pound/sum;
+	System.out.println("£"+pound+"="+"€"+euro);
+}
+public void euroToyen(float euro) {
+	this.euro=euro;
+	float sum=156.07f;
+	this.yen=(float)euro*sum;
+	System.out.println("€"+euro+"="+"¥"+yen);
+}
+public void yenToeuro(float yen) {
+	this.yen=yen;
+	float sum=156.07f;
+	this.euro=(float)yen/sum;
+	System.out.println("¥"+yen+"="+"€"+euro);
+}
+public void poundToyen(float pound) {
+	this.pound=pound;
+	float sum=188.53f;
+	this.yen=(float)pound*sum;
+	System.out.println("£"+pound+"="+"¥"+yen);
+}
+public void yenTopound(float yen) {
+	this.yen=yen;
+	float sum=188.53f;
+	this.pound=(float)yen/sum;
+	System.out.println("¥"+yen+"="+"£"+pound);
+}
+
+}
+
+//Now create another class and write the following code:
+
+package rupees;
+import java.util.*;
+public class CurrConverter {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("choose the base currency in the following:");
+		System.out.println("1.Doller\n2.Rupees\n3.Euro\n4.pound\n5.yen");
+		int ba=sc.nextInt();
+		System.out.println("Enter the Amount :");
+		float money=sc.nextFloat();
+		System.out.println("choose the targeted currency in the following:");
+		System.out.println("1.Doller\n2.Rupees\n3.Euro\n4.pound\n5.yen");
+		int ta=sc.nextInt();
+		if(ba==1 && ta==2) {
+			Currency c=new Currency();
+			c.dollerTorupees(money);
+		}
+		else if(ba==2 && ta==1) {
+			Currency c=new Currency();
+			c.rupeesTodoller(money);
+		}
+		else if(ba==1 && ta==3) {
+			Currency c=new Currency();
+			c.dollerToeuro(money);
+		}
+		else if(ba==3 && ta==1) {
+			Currency c=new Currency();
+			c.euroTodoller(money);
+		}
+		else if(ba==1 && ta==4) {
+			Currency c=new Currency();
+			c.dollerTopound(money);
+		}
+		else if(ba==4 && ta==1) {
+			Currency c=new Currency();
+			c.poundTodoller(money);
+		}
+		else if(ba==1 && ta==5) {
+			Currency c=new Currency();
+			c.dollerToyen(money);
+		}
+		else if(ba==5 && ta==1) {
+			Currency c=new Currency();
+			c.yenTodoller(money);
+		}
+		else if(ba==2 && ta==3) {
+			Currency c=new Currency();
+			c.rupeesToeuro(money);
+		}
+		else if(ba==3 && ta==2) {
+			Currency c=new Currency();
+			c.euroTorupees(money);
+		}
+		else if(ba==2 && ta==4) {
+			Currency c=new Currency();
+			c. rupeesTopound(money);
+		}
+		else if(ba==4 && ta==2) {
+			Currency c=new Currency();
+			c.poundTorupees(money);
+		}
+		else if(ba==2 && ta==5) {
+			Currency c=new Currency();
+			c.rupeesToyen(money);
+		}
+		else if(ba==5 && ta==2) {
+			Currency c=new Currency();
+			c.yenTorupees(money);
+		}
+		else if(ba==3 && ta==4) {
+			Currency c=new Currency();
+			c.euroTopound(money);
+		}
+		else if(ba==4 && ta==3) {
+			Currency c=new Currency();
+			c.poundToeuro(money);
+		}
+		else if(ba==3 && ta==5) {
+			Currency c=new Currency();
+			c.euroToyen(money);
+		}
+		else if(ba==5 && ta==3) {
+			Currency c=new Currency();
+			c.yenToeuro(money);
+		}
+		else if(ba==4 && ta==5) {
+			Currency c=new Currency();
+			c.poundToyen(money);
+		}
+		else if(ba==5 && ta==4) {
+			Currency c=new Currency();
+			c.yenTopound(money);
+		}
+		else {
+			System.out.println("Invalid input");
+		}
+			
+	}
+
+}
+
+
